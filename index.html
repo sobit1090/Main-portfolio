@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Dev Chronicle</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+ <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <!-- Custom Cursor Elements -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <!-- Loading Screen -->
+    <div class="loading-screen">
+      <div class="loading-text">Loading The Dev Chronicle...</div>
+      <div class="loading-bar">
+        <div class="loading-progress"></div>
+      </div>
+    </div>
+
+    <!-- Floating Code Elements -->
+    <div class="floating-code" style="top: 10%; left: 5%">
+      console.log('Hello World');
+    </div>
+    <div class="floating-code" style="top: 30%; right: 10%">
+      function animate() { ... }
+    </div>
+    <div class="floating-code" style="bottom: 20%; left: 15%">
+      const portfolio = new Portfolio();
+    </div>
+    <div class="floating-code" style="bottom: 40%; right: 5%">
+      gsap.to('.element', {duration: 1});
+    </div>
+
+    <div class="newspaper-container">
+      <div class="ink-blot ink-blot-1"></div>
+      <div class="ink-blot ink-blot-2"></div>
+
+      <header>
+        <div class="header-content">
+          <!-- Added responsive name display -->
+          <h1 class="logo">
+            <span class="desktop-name">Sobit Gautam</span>
+            <span class="mobile-name">Sobit</span>
+          </h1>
+          <p class="tagline">A Portfolio of Web Development & Design</p>
+          <p class="date-line">Established 2025 | The Code Herald</p>
+        </div>
+        <div class="social-header">
+          <a href="https://github.com" target="_blank" aria-label="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="https://leetcode.com" target="_blank" aria-label="LeetCode">
+            <i class="fas fa-code"></i>
+          </a>
+          <a
+            href="https://www.geeksforgeeks.org"
+            target="_blank"
+            aria-label="GeeksForGeeks"
+          >
+            <i class="fas fa-laptop-code"></i>
+          </a>
+        </div>
+      </header>
+
+      <nav>
+        <!-- Added hamburger menu -->
+        <div class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#tech">Tech Stack</a></li>
+          <li><a href="#contact">Contact</a></li>
+          
+        </ul>
+      </nav>
+
+      <section id="about">
+        <h2 class="section-title">Front Page Story</h2>
+        <div class="about-content">
+          <img src="20250426_112652.png" alt="Profile" class="profile-img" />
+          <div class="about-text">
+            <p>
+              In a world dominated by flashy colors and overwhelming designs, I
+              stand apart with a commitment to elegant simplicity. As a
+              final-year Computer Science student, I am passionate about
+              building clean and meaningful digital experiences.
+            </p>
+            <p>
+              During my academic journey, I have worked on projects that reflect
+              both technical skills and creativity. My focus is on web
+              development and data structures, where I enjoy solving problems
+              and creating solutions that are practical and user-friendly.
+            </p>
+            <p>
+              "I believe in the power of minimalism," I say. "When you strip
+              away the unnecessary, what remains is pure, focused functionality.
+              That's where true design happens."
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects">
+        <h2 class="section-title">Featured Projects</h2>
+        <div class="projects-grid">
+          <div class="project-card">
+            <img
+              src="/placeholder.svg?height=200&width=300"
+              alt="Project 1"
+              class="project-img"
+            />
+            <h3 class="project-title">The Minimalist Blog</h3>
+            <p class="project-description">
+              A content-focused blogging platform that eliminates all
+              distractions, putting the writing front and center. Built with
+              clean typography and intuitive navigation.
+            </p>
+          </div>
+          <div class="project-card">
+            <img
+              src="/placeholder.svg?height=200&width=300"
+              alt="Project 2"
+              class="project-img"
+            />
+            <h3 class="project-title">Data Dashboard</h3>
+            <p class="project-description">
+              An analytics dashboard that presents complex data in an easily
+              digestible format without unnecessary visual clutter. Features
+              real-time updates and interactive charts.
+            </p>
+          </div>
+          <div class="project-card">
+            <img
+              src="/placeholder.svg?height=200&width=300"
+              alt="Project 3"
+              class="project-img"
+            />
+            <h3 class="project-title">Black & White Store</h3>
+            <p class="project-description">
+              An e-commerce platform that proves you don't need color to create
+              an engaging shopping experience. Focuses on product quality and
+              user experience.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="tech" class="tech-stack">
+        <h2 class="section-title">Technical Arsenal</h2>
+        <div class="tech-grid">
+          <div class="tech-item">
+            <i class="fab fa-html5 tech-icon"></i>
+            <span>HTML5</span>
+          </div>
+          <div class="tech-item">
+            <i class="fab fa-css3-alt tech-icon"></i>
+            <span>CSS3</span>
+          </div>
+          <div class="tech-item">
+            <i class="fab fa-js tech-icon"></i>
+            <span>JavaScript</span>
+          </div>
+          <div class="tech-item">
+            <i class="fab fa-react tech-icon"></i>
+            <span>React</span>
+          </div>
+          <div class="tech-item">
+            <i class="fab fa-node-js tech-icon"></i>
+            <span>Node.js</span>
+          </div>
+          <div class="tech-item">
+            <i class="fas fa-database tech-icon"></i>
+            <span>MongoDB</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact">
+        <h2 class="section-title">Send a Dispatch</h2>
+        <form class="contact-form">
+          <div class="form-group">
+            <input type="text" placeholder="Your Name" required />
+          </div>
+          <div class="form-group">
+            <input type="email" placeholder="Your Email" required />
+          </div>
+          <div class="form-group">
+            <textarea placeholder="Your Message" required></textarea>
+          </div>
+          <button type="submit" class="submit-btn">Send Message</button>
+        </form>
+      </section>
+
+      <footer>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-github"></i></a>
+          <a href="#"><i class="fab fa-linkedin"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-codepen"></i></a>
+        </div>
+        <p>&copy; 2025 The Dev Chronicle. All rights reserved.</p>
+      </footer>
+    </div>
+
+    <!-- GSAP Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+   
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+<script src="script.js"></script>
+
+  </body>
+</html>
