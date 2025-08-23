@@ -15,7 +15,7 @@ app.use(express.urlencoded({ extended: true }));
 
 // Routes
 
-app.get("/s", (req, res) => {
+app.get("/", (req, res) => {
   res.render("index");
 });
 
