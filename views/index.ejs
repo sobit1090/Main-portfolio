@@ -1,277 +1,300 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, user-scalable=no,maximum-scale=1.0"
-    />
-    <title>The Dev Chronicle</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
-    <link rel="stylesheet" href="/style.css" />
-  </head>
-  <body>
-    <!-- Custom Cursor Elements -->
-    <div class="cursor"></div>
-    <div class="cursor-follower"></div>
+  <!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, user-scalable=no,maximum-scale=1.0"
+      />
+      <title>The Dev Chronicle</title>
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      />
+      <link rel="stylesheet" href="/style.css" />
+    </head>
+    <body>
+      <!-- Custom Cursor Elements -->
+      <div class="cursor"></div>
+      <div class="cursor-follower"></div>
 
-    <!-- Loading Screen -->
-    <div class="loading-screen">
-      <div class="loading-text">Loading The Dev Chronicle...</div>
-      <div class="loading-bar">
-        <div class="loading-progress"></div>
+      <!-- Loading Screen -->
+      <div class="loading-screen">
+        <div class="loading-text">Loading The Dev Chronicle...</div>
+        <div class="loading-bar">
+          <div class="loading-progress"></div>
+        </div>
       </div>
-    </div>
 
-    <!-- Floating Code Elements -->
-    <div class="floating-code" style="top: 10%; left: 5%">
-      console.log('Hello World');
-    </div>
-    <div class="floating-code" style="top: 30%; right: 10%">
-      function animate() { ... }
-    </div>
-    <div class="floating-code" style="bottom: 20%; left: 15%">
-      const portfolio = new Portfolio();
-    </div>
-    <div class="floating-code" style="bottom: 40%; right: 5%">
-      gsap.to('.element', {duration: 1});
-    </div>
+      <!-- Floating Code Elements -->
+      <div class="floating-code" style="top: 10%; left: 5%">
+        console.log('Hello World');
+      </div>
+      <div class="floating-code" style="top: 30%; right: 10%">
+        function animate() { ... }
+      </div>
+      <div class="floating-code" style="bottom: 20%; left: 15%">
+        const portfolio = new Portfolio();
+      </div>
+      <div class="floating-code" style="bottom: 40%; right: 5%">
+        gsap.to('.element', {duration: 1});
+      </div>
 
-    <div class="newspaper-container">
-      <div class="ink-blot ink-blot-1"></div>
-      <div class="ink-blot ink-blot-2"></div>
+      <div class="newspaper-container">
+        <div class="ink-blot ink-blot-1"></div>
+        <div class="ink-blot ink-blot-2"></div>
 
-      <header>
-        <div class="header-content">
-          <!-- Added responsive name display -->
-          <h1 class="logo">
-            <span class="desktop-name">Sobit Gautam</span>
-            <span class="mobile-name">Sobit</span>
-          </h1>
-          <p class="tagline">A Portfolio of Web Development & Design</p>
-          <p class="date-line">Established 2025 | The Code Herald</p>
-        </div>
-        <div class="social-header">
-          <a
-            href="https://github.com/sobit1090"
-            target="_blank"
-            aria-label="GitHub"
-          >
-            <i class="fab fa-github"></i>
-          </a>
-          <a
-            href=" https://www.linkedin.com/in/sobit-gautam/"
-            target="_blank"
-            aria-label="LinkedIn"
-          >
-            <i class="fab fa-linkedin-in"></i>
-          </a>
-          <a
-            href=" https://leetcode.com/u/sobit1090/"
-            target="_blank"
-            aria-label="LeetCode"
-          >
-            <i class="fas fa-code"></i>
-          </a>
-          <a
-            href=" https://www.geeksforgeeks.org/user/user_zrypjw36orb/"
-            target="_blank"
-            aria-label="GeeksForGeeks"
-          >
-            <i class="fas fa-laptop-code"></i>
-          </a>
-          <a
-            href="https://www.hackerrank.com/profile/sobitgautam811"
-            target="_blank"
-            aria-label="HackerRank"
-          >
-            <i class="fab fa-hackerrank"></i>
-          </a>
-        </div>
-      </header>
-
-      <nav>
-        <!-- Added hamburger menu -->
-        <div class="hamburger" id="hamburger">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-        <ul class="nav-links" id="navLinks">
-          <li><a href="#about">About</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#tech">Tech Stack</a></li>
-          <li><a href="#contact">Contact</a></li>
-          <li>
-            <a
-              href="/resume.pdf"
-              style="font-weight: 600"
-              download="resume.pdf"
-              target="_blank"
-            >
-              Resume
-              <i class="fa-solid fa-download" style="margin-left: 5px"></i>
-            </a>
-          </li>
-        </ul>
-      </nav>
-
-      <section id="about">
-        <h2 class="section-title">Front Page Story</h2>
-        <div class="about-content">
-          <img src="20250426_112652.png" alt="Profile" class="profile-img" />
-          <div class="about-text">
-            <p>
-              In a world dominated by flashy colors and overwhelming designs, I
-              stand apart with a commitment to elegant simplicity. As a
-              final-year Computer Science student, I am passionate about
-              building clean and meaningful digital experiences.
-            </p>
-            <p>
-              During my academic journey, I have worked on projects that reflect
-              both technical skills and creativity. My focus is on web
-              development and data structures, where I enjoy solving problems
-              and creating solutions that are practical and user-friendly.
-            </p>
-            <p>
-              "I believe in the power of minimalism," I say. "When you strip
-              away the unnecessary, what remains is pure, focused functionality.
-              That's where true design happens."
-            </p>
+        <header>
+          <div class="header-content">
+            <!-- Added responsive name display -->
+            <h1 class="logo">
+              <span class="desktop-name">Sobit Gautam</span>
+              <span class="mobile-name">Sobit</span>
+            </h1>
+            <p class="tagline">A Portfolio of Web Development & Design</p>
+            <p class="date-line">Established 2025 | The Code Herald</p>
           </div>
-        </div>
-      </section>
+          <div class="social-header">
+            <a
+              href="https://github.com/sobit1090"
+              target="_blank"
+              aria-label="GitHub"
+            >
+              <i class="fab fa-github"></i>
+            </a>
+            <a
+              href=" https://www.linkedin.com/in/sobit-gautam/"
+              target="_blank"
+              aria-label="LinkedIn"
+            >
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a
+              href=" https://leetcode.com/u/sobit1090/"
+              target="_blank"
+              aria-label="LeetCode"
+            >
+              <i class="fas fa-code"></i>
+            </a>
+            <a
+              href=" https://www.geeksforgeeks.org/user/user_zrypjw36orb/"
+              target="_blank"
+              aria-label="GeeksForGeeks"
+            >
+              <i class="fas fa-laptop-code"></i>
+            </a>
+            <a
+              href="https://www.hackerrank.com/profile/sobitgautam811"
+              target="_blank"
+              aria-label="HackerRank"
+            >
+              <i class="fab fa-hackerrank"></i>
+            </a>
+          </div>
+        </header>
 
-      <section id="projects">
-        <h2 class="section-title">Featured Projects</h2>
-        <div class="projects-grid">
-          <div class="project-card">
+        <nav>
+          <!-- Added hamburger menu -->
+          <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <ul class="nav-links" id="navLinks">
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#tech">Tech Stack</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li>
+              <a
+                href="/resume.pdf"
+                style="font-weight: 600"
+                download="resume.pdf"
+                target="_blank"
+              >
+                Resume
+                <i class="fa-solid fa-download" style="margin-left: 5px"></i>
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <section id="about">
+          <h2 class="section-title">Front Page Story</h2>
+          <div class="about-content">
+            <img src="20250426_112652.png" alt="Profile" class="profile-img" />
+            <div class="about-text">
+              <p>
+                In a world dominated by flashy colors and overwhelming designs, I
+                stand apart with a commitment to elegant simplicity. As a
+                final-year Computer Science student, I am passionate about
+                building clean and meaningful digital experiences.
+              </p>
+              <p>
+                During my academic journey, I have worked on projects that reflect
+                both technical skills and creativity. My focus is on web
+                development and data structures, where I enjoy solving problems
+                and creating solutions that are practical and user-friendly.
+              </p>
+              <p>
+                "I believe in the power of minimalism," I say. "When you strip
+                away the unnecessary, what remains is pure, focused functionality.
+                That's where true design happens."
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section id="projects">
+          <h2 class="section-title">Featured Projects</h2>
+          <div class="projects-grid">
+            <div class="project-card">
+              <a
+                style="
+                  text-decoration: none; /* removes underline */
+                  color: inherit;
+                "
+                href="/projects/shorting_visualizer"
+              >
+                <img
+                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAATYAAACiCAMAAAD84hF6AAAAjVBMVEX///8eHjhoaHQSEjHgVExiYm7fT0fng38AACpeXmtlZXGMjJTmf3oAABgAABoAAByYmJ8PDzDV1dcAACJTU2EWFjNCQlPCwsYAACUtLUMaGjW4uL2urrOjo6nsoJ3y8vPql5Pp6et0dH/Ly87fSkHe3uCDg4wlJT0AACBYWGYAAAcAAA7wt7TvsK1xcXzN7j2ZAAACx0lEQVR4nO3d23LaMBRAUQqFWOYObWkLhRZyseOE//+8TmZ6EGNqIx3sMbb3ftMEfKT1kAclJJ0OERERUZkNTV8yw6o3U5/CoCcFYdWbqU/d3iep1616M/UJNlWwqYJNFWwZPS1sTxdfhS0jM15KY3PxVdgyyoeBLSPYVMGmCjZVsKmCTVUK5vmL7Rm2zFIwYfBV+rgpgi2jFEz+kiTYVMGmCjZVLWZbHGwLz/e2mM1MvkuTy8uf/FrMdsvhYIPNL9hUwaYKNlWwqfI63P6bbQ+b6+HC+U9pfnk1BJvbi2GDzS/YVMGmCjZVqcMtVrbLeyTYpNThzPR0jzS9+ktEsLmdFTYJNlWwqYJNFWyqYHPr+PJDejnC5lr37PLH96xtZrvhrLDB5hdsqmBTBZsqr7Me1rYDbK5nNdHpHikysCmPDhtsfsGmCjZVsKmCza0wmEv/+SgUbBl53RTBJlXlBBtssDkGm6pGs602tlWhT240m4kCKfL9yFh+jWYrbwhsRTwZNtWTYVM9GTbVk2FTPbnmbPHrWHqNYSvmNAUGWwmDYFMNgk01CDbVINhUg+6ebf3LtobNtf7ydDW07MNWyvYLDLby58Kmmgubai5sqrmwqeZWwRYnp7ugJIbN9UT5L4QNNthggw022LzYNjPbBjbXDXrdFMFW7hDYYIMNNthgg61gtjiZSLdeWLWJLf+9sMEGG2ywwQabF9vb1vYGm+vc0aNtBJvr3IfBZ2nwABtssMEGW8PYdufB5jrEJFMpufpPM2DLeDJssMEGG2ywNYPt/bftHTbXE40eB1LBVzSNZitvg7DBBhtssMH2b7n7Y9vB5rqMk0hKrv4FJNi8twAbbLDBBhtssHkvZ8e9dJzB5rrM/z8lsKmW97kr2GCDrT5sqZ8lhEFP+vhOXdXyPnd11nZk23Y6Q9OXzLC65X3uioiIiG7tLzdir2E9Mug5AAAAAElFTkSuQmCC"
+                  alt="Project 1"
+                  class=""
+                />
+                <h3 class="project-title">The Sorting Visualizer</h3>
+                <p class="project-description">
+                  An interactive sorting visualizer that demonstrates algorithms
+                  step by step, making learning sorting techniques engaging,
+                  clear, and intuitive.
+                </p>
+              </a>
+            </div>
+            <div class="project-card">
             <a
               style="
-                text-decoration: none; /* removes underline */
-                color: inherit;
-              "
-              href="/projects/shorting_visualizer"
-            >
+                  text-decoration: none; /* removes underline */
+                  color: inherit;
+                "
+                href="/projects/To-Do-List">
               <img
-                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAATYAAACiCAMAAAD84hF6AAAAjVBMVEX///8eHjhoaHQSEjHgVExiYm7fT0fng38AACpeXmtlZXGMjJTmf3oAABgAABoAAByYmJ8PDzDV1dcAACJTU2EWFjNCQlPCwsYAACUtLUMaGjW4uL2urrOjo6nsoJ3y8vPql5Pp6et0dH/Ly87fSkHe3uCDg4wlJT0AACBYWGYAAAcAAA7wt7TvsK1xcXzN7j2ZAAACx0lEQVR4nO3d23LaMBRAUQqFWOYObWkLhRZyseOE//+8TmZ6EGNqIx3sMbb3ftMEfKT1kAclJJ0OERERUZkNTV8yw6o3U5/CoCcFYdWbqU/d3iep1616M/UJNlWwqYJNFWwZPS1sTxdfhS0jM15KY3PxVdgyyoeBLSPYVMGmCjZVsKmCTVUK5vmL7Rm2zFIwYfBV+rgpgi2jFEz+kiTYVMGmCjZVLWZbHGwLz/e2mM1MvkuTy8uf/FrMdsvhYIPNL9hUwaYKNlWwqfI63P6bbQ+b6+HC+U9pfnk1BJvbi2GDzS/YVMGmCjZVqcMtVrbLeyTYpNThzPR0jzS9+ktEsLmdFTYJNlWwqYJNFWyqYHPr+PJDejnC5lr37PLH96xtZrvhrLDB5hdsqmBTBZsqr7Me1rYDbK5nNdHpHikysCmPDhtsfsGmCjZVsKmCza0wmEv/+SgUbBl53RTBJlXlBBtssDkGm6pGs602tlWhT240m4kCKfL9yFh+jWYrbwhsRTwZNtWTYVM9GTbVk2FTPbnmbPHrWHqNYSvmNAUGWwmDYFMNgk01CDbVINhUg+6ebf3LtobNtf7ydDW07MNWyvYLDLby58Kmmgubai5sqrmwqeZWwRYnp7ugJIbN9UT5L4QNNthggw022LzYNjPbBjbXDXrdFMFW7hDYYIMNNthgg61gtjiZSLdeWLWJLf+9sMEGG2ywwQabF9vb1vYGm+vc0aNtBJvr3IfBZ2nwABtssMEGW8PYdufB5jrEJFMpufpPM2DLeDJssMEGG2ywNYPt/bftHTbXE40eB1LBVzSNZitvg7DBBhtssMH2b7n7Y9vB5rqMk0hKrv4FJNi8twAbbLDBBhtssHkvZ8e9dJzB5rrM/z8lsKmW97kr2GCDrT5sqZ8lhEFP+vhOXdXyPnd11nZk23Y6Q9OXzLC65X3uioiIiG7tLzdir2E9Mug5AAAAAElFTkSuQmCC"
-                alt="Project 1"
-                class=""
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJjpHpnrh8l3uc5hxHZLv8AKCrAuEnXJECUg&s"
+                alt="Project 3"
+                class=" "
               />
-              <h3 class="project-title">The Sorting Visualizer</h3>
+              <h3 class="project-title">To-Do List</h3>
               <p class="project-description">
-                An interactive sorting visualizer that demonstrates algorithms
-                step by step, making learning sorting techniques engaging,
-                clear, and intuitive.
+                A To-Do List stores tasks in browser localStorage, enabling
+                offline use with persistent add, edit, and delete functionality.
               </p>
             </a>
-          </div>
-          <div class="project-card">
-            <img
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJjpHpnrh8l3uc5hxHZLv8AKCrAuEnXJECUg&s"
-              alt="Project 3"
-              class=" "
-            />
-            <h3 class="project-title">Black & White Store</h3>
-            <p class="project-description">
-              A To-Do List stores tasks in browser localStorage, enabling
-              offline use with persistent add, edit, and delete functionality.
-            </p>
-          </div>
-          <div class="project-card">
-            <img
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpREeseTY2Aa6X8pRvc8B2DmYB7zyQJx7Zqg&s"
-              alt="Project 3"
-              class=" "
-            />
-            <h3 class="project-title">Black & White Store</h3>
-            <p class="project-description">
-              An e-commerce platform that proves you don't need color to create
-              an engaging shopping experience. Focuses on product quality and
-              user experience.
-            </p>
-          </div>
-        </div>
-      </section>
+            </div>
 
-      <section id="tech" class="tech-stack">
-        <h2 class="section-title">Technical Arsenal</h2>
-        <div class="tech-grid">
-          <div class="tech-item">
-            <i class="fab fa-html5 tech-icon"></i>
-            <span>HTML5</span>
-          </div>
-          <div class="tech-item">
-            <i class="fab fa-css3-alt tech-icon"></i>
-            <span>CSS3</span>
-          </div>
-          <div class="tech-item">
-            <i class="fab fa-js tech-icon"></i>
-            <span>JavaScript</span>
-          </div>
-          <div class="tech-item">
-            <i class="fab fa-react tech-icon"></i>
-            <span>React</span>
-          </div>
-          <div class="tech-item">
-            <i class="fab fa-node-js tech-icon"></i>
-            <span>Node.js</span>
-          </div>
-          <div class="tech-item">
-            <i class="fas fa-database tech-icon"></i>
-            <span>MongoDB</span>
-          </div>
-        </div>
-      </section>
 
-      <section id="contact">
-        <h2 class="section-title">Send a Dispatch</h2>
-        <form class="contact-form" method="post" action="/send">
-          <div class="form-group">
-            <input type="text" name="name" placeholder="Your Name" required />
-          </div>
-          <div class="form-group">
-            <input
-              name="email"
-              type="email"
-              placeholder="Your Email"
-              required
-            />
-          </div>
-          <div class="form-group">
-            <textarea
-              name="message"
-              placeholder="Your Message"
-              required
-            ></textarea>
-          </div>
-          <button type="submit" class="submit-btn">Send Message</button>
-        </form>
-        <div class="thank-you-message" style="display:none; text-align:center; font-size:1.5rem; font-weight:bold; padding:20px;">
-    ✅ Thank you! Sobit will reply soon.
-  </div>
-      </section>
 
-      <footer>
-        <div class="social-links">
-          <a href="#"><i class="fab fa-github"></i></a>
-          <a href="#"><i class="fab fa-linkedin"></i></a>
-          <a href="#"><i class="fab fa-twitter"></i></a>
-          <a href="#"><i class="fab fa-codepen"></i></a>
-        </div>
-        <p>&copy; 2025 The Dev Chronicle. All rights reserved.</p>
-      </footer>
+  <div class="project-card">
+    <a
+      style="
+        text-decoration: none; /* removes underline */
+        color: inherit;
+        display: block;
+      "
+      href="/projects/movie"
+    >
+      <img
+        src=" /movie-character/s2.png"
+        alt="Movie Character Manager"
+        class="project-img"
+      />
+      <h3 class="project-title">Movie Character Manager</h3>
+      <p class="project-description">
+        A web app to create, edit, and manage movie characters with MongoDB
+        storage, EJS templates, and RESTful APIs for dynamic functionality.
+      </p>
+    </a>
+  </
+
+
+
+
+
+          </div>
+        </section>
+
+        <section id="tech" class="tech-stack">
+          <h2 class="section-title">Technical Arsenal</h2>
+          <div class="tech-grid">
+            <div class="tech-item">
+              <i class="fab fa-html5 tech-icon"></i>
+              <span>HTML5</span>
+            </div>
+            <div class="tech-item">
+              <i class="fab fa-css3-alt tech-icon"></i>
+              <span>CSS3</span>
+            </div>
+            <div class="tech-item">
+              <i class="fab fa-js tech-icon"></i>
+              <span>JavaScript</span>
+            </div>
+            <div class="tech-item">
+              <i class="fab fa-react tech-icon"></i>
+              <span>React</span>
+            </div>
+            <div class="tech-item">
+              <i class="fab fa-node-js tech-icon"></i>
+              <span>Node.js</span>
+            </div>
+            <div class="tech-item">
+              <i class="fas fa-database tech-icon"></i>
+              <span>MongoDB</span>
+            </div>
+          </div>
+        </section>
+
+        <section id="contact">
+          <h2 class="section-title">Send a Dispatch</h2>
+          <form class="contact-form" method="post" action="/send">
+            <div class="form-group">
+              <input type="text" name="name" placeholder="Your Name" required />
+            </div>
+            <div class="form-group">
+              <input
+                name="email"
+                type="email"
+                placeholder="Your Email"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <textarea
+                name="message"
+                placeholder="Your Message"
+                required
+              ></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Send Message</button>
+          </form>
+          <div class="thank-you-message" style="display:none; text-align:center; font-size:1.5rem; font-weight:bold; padding:20px;">
+      ✅ Thank you! Sobit will reply soon.
     </div>
+        </section>
 
-    <!-- GSAP Libraries -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+        <footer>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-github"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-codepen"></i></a>
+          </div>
+          <p>&copy; 2025 The Dev Chronicle. All rights reserved.</p>
+        </footer>
+      </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
-    <script src=" /script.js"></script>
-  </body>
-</html>
+      <!-- GSAP Libraries -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+      <script src="/script.js"></script>
+    </body>
+  </html>

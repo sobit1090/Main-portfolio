@@ -1,16 +1,19 @@
 const express = require("express");
 const nodemailer = require("nodemailer");
-
+const path = require("path")
 
 const app = express();
-const port = 3000;
+const port = 3002;
 
 // Middleware
 app.set("view engine", "ejs");
+app.set("views", path.join(__dirname, "views"));
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true })); 
 app.use(express.json());
 
+
+ 
 // Routes
 app.get("/s", (req, res) => {
   res.render("index");
@@ -20,9 +23,14 @@ app.get("/projects/shorting_visualizer", (req, res) => {
   res.render("projects/shorting_visualizer");
 });
 
-app.get("/projects/project2", (req, res) => {
-  res.render("projects/project2");
+app.get("/projects/To-Do-List", (req, res) => {
+  res.render("projects/to_do_list");
 });
+app.get("/projects/movie", (req, res) => {
+  res.render("projects/movie");
+});
+
+
 
 // Contact form POST route
 app.post("/send", (req, res) => {
