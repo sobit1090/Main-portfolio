@@ -1,11 +1,11 @@
 const express = require("express");
 const nodemailer = require("nodemailer");
 
-
 const app = express();
 const port = 3001;
 
 // Middleware
+app.use(express.json())
 app.set("view engine", "ejs");
 // app.set("views", path.join(__dirname, "views"));
 app.use(express.static("public"));
