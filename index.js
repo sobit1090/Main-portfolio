@@ -1,20 +1,20 @@
 const express = require("express");
 const nodemailer = require("nodemailer");
-const path = require("path")
+
 
 const app = express();
-const port = 3002;
+const port = 4000;
 
 // Middleware
 app.set("view engine", "ejs");
-app.set("views", path.join(__dirname, "views"));
+// app.set("views", path.join(__dirname, "views"));
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true })); 
-app.use(express.json());
-
 
  
+
 // Routes
+
 app.get("/s", (req, res) => {
   res.render("index");
 });
