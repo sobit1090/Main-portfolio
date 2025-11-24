@@ -33,6 +33,10 @@ app.get("/projects/movie", (req, res) => {
 app.get("/projects/LosPollos", (req, res) => {
   res.render("projects/LosPollos");
 });
+app.get("/projects/password_generator", (req, res) => {
+  res.render("projects/password_generator");
+});
+
 
 
 // Contact form POST route
