@@ -30,6 +30,9 @@ app.get("/projects/movie", (req, res) => {
   res.render("projects/movie");
 });
 
+app.get("/projects/LosPollos", (req, res) => {
+  res.render("projects/LosPollos");
+});
 
 
 // Contact form POST route

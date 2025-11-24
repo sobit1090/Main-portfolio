@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Los Pollos Hermanos - The Dev Chronicle</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="/blogCss.css" />
+  </head>
+  <body>
+    <!-- Custom Cursor Elements -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <!-- Floating Code Elements -->
+    <div class="floating-code" style="top: 10%; left: 5%">
+      import React from 'react';
+    </div>
+    <div class="floating-code" style="top: 30%; right: 10%">
+      const [cart, setCart] = useState([]);
+    </div>
+    <div class="floating-code" style="bottom: 20%; left: 15%">
+      app.post('/api/orders', handler);
+    </div>
+    <div class="floating-code" style="bottom: 40%; right: 5%">
+      cloudinary.uploader.upload();
+    </div>
+
+    <div class="newspaper-container">
+      <div class="ink-blot ink-blot-1"></div>
+      <div class="ink-blot ink-blot-2"></div>
+
+      <a href="/s" class="back-button">
+        Back
+      </a>
+
+      <header>
+        <div class="header-content">
+          <h1 class="logo">The Dev Chronicle</h1>
+          <p class="tagline">Project Showcase & Technical Deep Dive</p>
+          <p class="date-line">Published: November 2025 | Status: Live Production</p>
+        </div>
+      </header>
+
+      <!-- Project Hero Section -->
+      <section class="project-hero">
+        <h1 class="project-title">Los Pollos Hermanos</h1>
+        <p class="project-subtitle">
+          Built with MERN, Cloudinary, and secure sessions — delivering a fast, animated, and
+          production-ready online food-ordering experience.
+        </p>
+
+        <div class="project-tech-hero">
+          <div class="tech-stack">
+            <span class="tech-tag">HTML</span>
+            <span class="tech-tag">SCSS</span>
+            <span class="tech-tag">JavaScript</span>
+            <span class="tech-tag">React</span>
+            <span class="tech-tag">Redux</span>
+            <span class="tech-tag">Node.js</span>
+            <span class="tech-tag">Express</span>
+            <span class="tech-tag">MongoDB</span>
+            <span class="tech-tag">Cloudinary</span>
+            <span class="tech-tag">RESTful API</span>
+          </div>
+        </div>
+
+        <div class="project-links">
+          <a
+            href="https://los-pollos-hermanos-front.onrender.com/"
+            class="btn btn-primary"
+            target="_blank"
+          >
+            <i class="fas fa-external-link-alt"></i>
+            Live Demo
+          </a>
+          <a
+            href="https://github.com/sobit1090/los-pollos-hermanos-front"
+            class="btn"
+            target="_blank"
+          >
+            <i class="fab fa-github"></i>
+            Frontend Source Code
+          </a>
+          <a
+            href="https://github.com/sobit1090/los-pollos-hermanos"
+            class="btn"
+            target="_blank"
+          >
+            <i class="fab fa-github"></i>
+            Backend Source Code
+          </a>
+        </div>
+      </section>
+
+      <!-- Project Gallery -->
+      <section class="project-gallery">
+        <h2 class="section-title">Project Screenshots</h2>
+        <div class="gallery-grid">
+          <div class="gallery-item">
+            <div class="gallery-image">
+              <!-- You will set the correct image path -->
+              <img src="/LosPollos/home.png" alt="Los Pollos Home Page" />
+            </div>
+            <div class="gallery-caption">Hero section & animated landing page</div>
+          </div>
+
+          <div class="gallery-item">
+            <div class="gallery-image">
+              <img src="/LosPollos/menu.png" alt="Los Pollos Menu Page" />
+            </div>
+            <div class="gallery-caption">Dynamic menu with filters & add-to-cart</div>
+          </div>
+
+          <div class="gallery-item">
+            <div class="gallery-image">
+              <img src="/LosPollos/admin.png" alt="Los Pollos Admin Dashboard" />
+            </div>
+            <div class="gallery-caption">Admin dashboard with stats & management tools</div>
+          </div>
+          <div class="gallery-item">
+            <div class="gallery-image">
+              <img src="/LosPollos/users.png" alt="Los Pollos Admin Dashboard" />
+            </div>
+            <div class="gallery-caption">Admin dashboard with Users management tools</div>
+          </div>
+                    <div class="gallery-item">
+            <div class="gallery-image">
+              <img src="/LosPollos/login.png" alt="Los Pollos Admin Dashboard" />
+            </div>
+            <div class="gallery-caption">Animated Login page</div>
+          </div>
+           <div class="gallery-item">
+            <div class="gallery-image">
+              <img src=" data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAT4AAACfCAMAAABX0UX9AAAAw1BMVEX///9EhvlDh/xEhvdEhfRAe99Ae91FhO5Gg+tFhfJBe9xAfOI/fORDh/1Gg+pTlP/f6/9onPTu9P5el/e4zfXh6vr4+v5jlObH2/30+P7p8PzL2/be6/84eeM8eN6vy/6cv/1KjPyIsfqVufugvfGlv/lQi/SGq+3H2fZ8qPS1y/JGgN53qf5cmP5lnv260/+syf1ynu1ekeqKsO+bufFrmuqqw/J8petTiORkm/VWkfKKsvbT4PdwoPFPjfJbjeJ0nuR5+u4kAAAJ90lEQVR4nO2d8XvpPBSAVVuuW4bSamu1FWPUsKGYjv3/f9UX2hqVtkmv8iXr+9O9z2x98u6c5OQkLJNJSUlJSUlJSUlJSUmhEVF6rPwTjxVNvfcg7oTafBm9lf+VcXtSke89lDugjMrZ0hXIGrXnyr0Hc2vUafka7lxGyr3Hc1u0jnFFe6XS2+TeI7olYgck3TUplX9T/D0Z17UH/I0f7z2om1GpXdse8Nf5Leuv2rm6vN+UvpOrp+6BkXbvgd0EbZSIvazxdO+R3YTrrxsOpfFvqJ6TWDccjOdfsHo8JyQPUGvee3CJ8/iWVPAB2rS3X+R2gvay1BcvypV3az6qdBcvWjVRe7SvHk/ZZPWVajRvfSvjEpMsRufeY0wO+TlpewxTprd4aZaT15cdiPceZkKIg+TtMVmD1sbzxLiBPiZbpTP8tNEt7IHVY0pl8TJlsjfRl63Z9x5qAjzWbmMP+KOwby9vbmUPFC/0bX2V8s3sMSx1fXv5RuuGA3V9+4lxQ3tMdiTde8BXRRvHmvlKbI+JFbXGC1WrxzSOhFJvNFU6YyOO+Teatr4V7HWDZUrGQNn33rWndSmGwDY94ae2sUfPvnVs7+BCVEa9vVCs76eoeFEMPHcldvxydmYrK+0ebgiuadn64nZaeoOJ5E891X4Z48UfNcULXtGybSvQ40ZZmo7YLEYOj+koXqQxuju21mkGn9VqE5xJkKXj2OgF1V3WqL7Y4UMWlfYbskAqihf7jWERYNjeaIKwVZXt5/H+1Sg/sk3+6iG3EeUNFMTBgklwbTAIApky+X17pYwwztJ2g5Vo4lOVLUULZIg/NhJH2ejIq06x3xgkKp1tdAobT4SvHk+RY+RGk3gx8tipRf5mqmTfmJQi1w2mFlyeyZokScFuZYuL+Omkd146kfnF1IL8qPb8/eOjsbQC/db/cFE/fUxy8dIsR8/vQfoeZ6Z+QPiwAirpulCM8mcQXLzIm8h1I1Cf3dD1ooNenMH9AX1R/pg3cjsvihFtL0Cf9O7J2yN0oVPYXl+xEBF+xBYv4ghlcwDVp86Kp+jmK+wBe32R+dsjtfMSXbSwQUtH09TP/S1h6VsvHl4V7o+pkVm8VGoowQfXNz+3V9RXsFujrr5wfwz7nPBAE0HuIMgL0Ce++/QVH4aQR9S9r4bOfwyRb/d4LTMcAtC5T2v49QldyCMOS0fxMP+FPmJD3uohtpHsXUXfPv7CHrGtJz7cazPpsf+gb3GRvBbkGSf6wv0NSLvzIlXRgg+uT+379UErl1N9YfnL9kgLv2e02AvQlxkK5/b0Bix+zvSFxR9D2JUr+w0x+AL0+bNXh019Pn0h/hhjmvCArwooWhDtBejL1M/qZn0B7br49IX5W5N0atnsodrjOLg+2RKKgktR/4DfVq7/vMZ5YbA/9iXRAV+XDmrqBurLqNZK14sHecJ7QN3r1xfij1mTM/uJNXR7QfrA/NlfAXfFh0Y3aOQX+kL8FchpXClhRZifz8AtgWrXLctSLu67HBkKFwT7aycz1gSYYuQuV4ifVZYO8Rf4a7riAJPl5Y76AuOvd8UBJssN9RUhwP3Rqa9QCHoLlazZr4Bm4FGlPIdFHyBPtr4pctG81wddEkW7u2ysBFC7mKtFfyjBms1iP0CfAIs/cuY+BfrrD+LyLEJtdhvC4aBtP5cVW7puLoeX2wbt3V+3hMUfOSsvVt3HbHzfLb8uzVbLt5/QhV3XL1D6aAXpu4y/Hjl1H9aug/k6T0xtvtIhUQUK6IVyXgG+moHRdxF/LEG7jkyzjK6PPT8Js5etACnFotk9NX26LY7yVzCgLZv/KXKHLaBynlZ2IzghhRY/P/Gn9kNeuvd3+pAqSR2XjF3j0P2d9OK0ZbiSnPWTv1IjaOE9wJ/443pE9ftA6VdA9sf9fO6Z3A2VB+Jv93PeGzr1nccf90XYWZtURdf3eSyctUVoQO3D73jeG6n6xx+3JWjZdaj3kP2xx8yyV+G5C8Jv7mWvtoh67dEftyHukqTaRtd3TC07Mh9bfS/TlcjXHv2RF3ygePlE9feTW81IHfrSVR217nrsH0DgLQNQvKBGHxifG1JNPopW31XRXEW+9gCo/9Yk3nHJVNbI6fvphh+6PnkmoOnjhT9z4ma+A0/I0ce54Yegz01ee4Wqj2+Qeb8vo30hz36fzh0MsPJG6XOuOavIwcebsNsxRKAgFy+ccwMZWAn311o5nl/NKM8ewpLAdcNB3qBufTn3BrK0iNDizGPit45qb0Vg0eJho4ef23d5DU1fd+GQLeTUFfrEBh/gGb1z4KSvrIT4ay2dpl244zMaRBYtHhpG58Xdug0DpzXBvSikIacub5LU5oNQz0d7c9PX3XuoVlBsfTutBXGeQ7UnvBPV5rtEHKB3XtZuM2q4g/hr5ZbOl1XrL2rqtv7C7uMThbJFzl6u6vprLi7jy5w7854cGJyQ4FsSdMABR94g6wPVnzvcSj937qi1Gzr7EnmIYW9F2pVmCPYnur9C252rRKtxKi+3dBdQGZrYQRBdtHh0C4U8IgXuy+s8S91VyzHV4hdu6IF5D3m3AVhR8Qm6UhVZXz7PfRwTTurucsCd+T30ggisuRj2ePi7WImj3sPwV/i0jiknDfuN+evxv/YSuWLZBy38Ojl5qG0OXV++8DD7+SQmVTz+Uxw2cEKPzxFftHiA4gXHX3FnXRQccrNvtnCCj3+nYd04oHZw9OULeu67fiZQBvNgCyv2+BX0/edkUvnE8pcv8vsbaV7eqna3gbVm7OnT9DfHpjizH+AP3zIXYNWQM6o0nO3AApzDY0V0p8WPhlO8HPzlcnxu9T23Zg2zhS2PNykpWjyULZ4+EH/AQmsPrru9vnfiN7vnyAPM8Ms/4Fv7CT5qihaPJubqccjfuJDfafEjdzDtOfkbK/h2FBUtHo9r3PDLP8T0R+i1gnCsHnb8xZr/+AYVnRY/2gCz+Dv4+4tLzrRoDL4YxUssf7kFNZvdc8Q2vr78A3bwUVe0eNifcfzxePqgn7VGB13sxRc3/ijb7J4jVWPow5n/QNFy7zEmyQS/eAHlM7q/3I7mvw6d0b4Kf2KAnL+0dVr8KH/ycfwJiMH3TcnxUBDyJpY+tPzNkXwXEg1QvCTmLzejtGI+YR5r9kPxx+8oLlo8Htfxwi/SX86kstPix9om44+n5VpBONogpr4If+S+gQMPZRtTX3j98k1dhx6O2okdfiH1M03XCsKxq3H9Be8/cnN6Oy0+ZKsXV19g/jao3uyeo80eYvuDx99u+BuKFg9xtt3PZDGAz387alvMcFTr4yGev4dLf+byF2w3fDQ3H3EzWDjr35uLy9uUvwCxaW2+qvFoHPme14M/G5Zy1P3fsfs3tN/qLiUlJSUlJSUlJSUlJSUlJYVq/gMd+cb7JDvI5QAAAABJRU5ErkJggg==" alt="Los Pollos Admin Dashboard" />
+            </div>
+            <div class="gallery-caption">Google Authentication || Google OAuth</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Project Overview -->
+      <section class="project-section">
+        <h2 class="section-title">Project Overview</h2>
+        <div class="content-grid">
+          <div class="content-card">
+            <h3 class="card-title">
+              <i class="fas fa-bullseye"></i>
+              Objectives
+            </h3>
+            <div class="card-content">
+              <ul>
+                <li>
+                  Build a production-ready food ordering platform inspired by "Los Pollos Hermanos"
+                  with a cinematic UI and smooth animations.
+                </li>
+                <li>
+                  Implement a complete user flow: browse menu → manage cart → place order →
+                  view order history.
+                </li>
+                <li>
+                  Use <strong>session-based authentication</strong> with both manual login and
+                  Google OAuth integration.
+                </li>
+                <li>
+                  Store user data and orders in <strong>MongoDB</strong>, with clean Mongoose
+                  models for scalability.
+                </li>
+                <li>
+                  Integrate <strong>Cloudinary</strong> to host all images (menu items, branding,
+                  and profile pictures) instead of local assets.
+                </li>
+                <li>
+                  Provide a separate <strong>Admin experience</strong> with stats, total users,
+                  total orders, revenue, and access to management tools.
+                </li>
+                <li>
+                  Deploy frontend and backend on <strong>Render</strong> with proper CORS, cookies,
+                  and environment-based configuration.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Advantages & Benefits -->
+      <section class="project-section">
+        <h2 class="section-title">Advantages & Benefits</h2>
+        <div class="content-grid">
+          <div class="content-card">
+            <h3 class="card-title">
+              <i class="fas fa-rocket"></i>
+              Technical Advantages
+            </h3>
+            <div class="card-content">
+              <ul>
+                <li>
+                  <strong>Clean MERN architecture</strong> with clear separation between frontend,
+                  backend, and database layers makes the project easy to extend.
+                </li>
+                <li>
+                  <strong>Redux-based cart</strong> with add, remove, increment, decrement, and
+                  price calculation ensures predictable state management.
+                </li>
+                <li>
+                  <strong>Cloudinary integration</strong> offloads all image hosting, supports
+                  transformations, and improves page load speed.
+                </li>
+                <li>
+                  <strong>Secure session cookies</strong> with proper CORS and SameSite configuration
+                  allow Google login and manual login to work in production.
+                </li>
+                <li>
+                  <strong>Framer Motion</strong> animations give the brand a premium feel with smooth
+                  transitions, hover effects, and micro-interactions.
+                </li>
+                <li>
+                  <strong>Responsive layout</strong> with SCSS ensures the app works well on mobile,
+                  tablet, and desktop devices.
+                </li>
+                <li>
+                  Designed with <strong>real-world deployment constraints</strong> in mind:
+                  environment variables, Render hosting behavior, and proxy-aware Express config.
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="content-card">
+            <h3 class="card-title">
+              <i class="fas fa-heart"></i>
+              Learning & Takeaways
+            </h3>
+            <div class="card-content">
+              <ul>
+                <li>
+                  Deepened understanding of <strong>authentication flows</strong> (Google OAuth +
+                  manual login) and handling session-based auth across frontend and backend.
+                </li>
+                <li>
+                  Gained experience in debugging tricky issues like CORS errors, cookie policies,
+                  and auth not persisting after deployment.
+                </li>
+                <li>
+                  Learned how to integrate <strong>Cloudinary</strong> in a real project, including
+                  upload flows, public IDs, and using remote URLs in React.
+                </li>
+                <li>
+                  Improved skills in <strong>state management</strong> using Redux for cart, user,
+                  and global messages (toasts).
+                </li>
+                <li>
+                  Implemented <strong>role-based UI</strong> (admin vs normal user), including
+                  different profile views and protected admin actions.
+                </li>
+                <li>
+                  Practiced building a <strong>portfolio-ready project</strong> with branding,
+                  animations, and attention to details that feel like a real product, not just a
+                  tutorial app.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        <p>&copy; 2025 The Dev Chronicle. All rights reserved.</p>
+      </footer>
+    </div>
+
+    <script>
+      // Custom Cursor
+      const cursor = document.querySelector(".cursor");
+      const cursorFollower = document.querySelector(".cursor-follower");
+
+      document.addEventListener("mousemove", (e) => {
+        cursor.style.left = e.clientX + "px";
+        cursor.style.top = e.clientY + "px";
+
+        setTimeout(() => {
+          cursorFollower.style.left = e.clientX + "px";
+          cursorFollower.style.top = e.clientY + "px";
+        }, 100);
+      });
+
+      // Floating code animation
+      document.querySelectorAll(".floating-code").forEach((code, i) => {
+        setInterval(() => {
+          code.style.transform = `translateY(${
+            Math.sin(Date.now() * 0.001 + i) * 20
+          }px)`;
+        }, 50);
+      });
+
+      // Smooth scroll for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            target.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            });
+          }
+        });
+      });
+
+      // Gallery item hover effects
+      document.querySelectorAll(".gallery-item").forEach((item) => {
+        item.addEventListener("mouseenter", () => {
+          item.style.transform = "scale(1.02)";
+        });
+        item.addEventListener("mouseleave", () => {
+          item.style.transform = "scale(1)";
+        });
+      });
+
+      // Feature items animation on scroll
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px",
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = "1";
+            entry.target.style.transform = "translateY(0)";
+          }
+        });
+      }, observerOptions);
+
+      document
+        .querySelectorAll(".feature-item, .content-card, .timeline-item")
+        .forEach((item) => {
+          item.style.opacity = "0";
+          item.style.transform = "translateY(30px)";
+          item.style.transition = "opacity 0.6s ease, transform 0.6s ease";
+          observer.observe(item);
+        });
+    </script>
+  </body>
+</html>
