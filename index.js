@@ -20,24 +20,30 @@ app.get("/", (req, res) => {
 app.get("/projects/:project", (req, res) => {
   res.render(`projects/${req.params.project}`);
 });
-
 // Contact form
 app.post("/send", async (req, res) => {
   const { name, email, message } = req.body;
   console.log("📩 Received:", name, email, message);
 
   try {
-   const transporter = nodemailer.createTransport({
-  host: "smtp.gmail.com",
-  port: 465,
-  secure: true,
-  auth: {
-    user: process.env.MAIL_USER,
-    pass: process.env.MAIL_PASS
-  }
-});
+    const transporter = nodemailer.createTransport({
+      host: "smtp.gmail.com",
+      port: 465,
+      secure: true,
+      auth: {
+        user: process.env.MAIL_USER,
+        pass: process.env.MAIL_PASS
+      }
+    });
 
-    
+    // Optional: Debug SMTP
+    transporter.verify((err, success) => {
+      if (err) {
+        console.log("SMTP ERROR:", err);
+      } else {
+        console.log("SMTP READY");
+      }
+    });
 
     await transporter.sendMail({
       from: email,
@@ -55,8 +61,3 @@ app.post("/send", async (req, res) => {
     return res.json({ success: false, error: error.message });
   }
 });
-
-app.listen(port, () =>
-  console.log(`🚀 Server running at http://localhost:${port}`)
-);
- 
