@@ -322,35 +322,3 @@ document.querySelector('.contact-form').addEventListener('submit', async (e) => 
         
         console.log("[v0] GSAP animations and custom cursor initialized successfully");
  // Handle contact form without page reload
-const contactForm = document.querySelector(".contact-form");
-const thankYou = document.querySelector(".thank-you-message");
-
-if (contactForm) {
-  contactForm.addEventListener("submit", async (e) => {
-    e.preventDefault(); // stop normal HTML form submit
-
-    const formData = new FormData(contactForm);
-    const data = Object.fromEntries(formData.entries());
-
-    try {
-      const res = await fetch("/send", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data)
-      });
-
-      const result = await res.json();
-
-      if (result.success) {
-        contactForm.style.display = "none";
-        thankYou.style.display = "block";
-      } else {
-        alert("❌ Something went wrong. Please try again later.");
-      }
-
-    } catch (err) {
-      alert("Network error — message not sent.");
-      console.log(err);
-    }
-  });
-}
