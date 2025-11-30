@@ -37,7 +37,7 @@ app.post("/send", async (req, res) => {
   }
 });
 
-    });
+    
 
     await transporter.sendMail({
       from: email,
