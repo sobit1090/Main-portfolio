@@ -20,6 +20,7 @@ app.get("/", (req, res) => {
 app.get("/projects/:project", (req, res) => {
   res.render(`projects/${req.params.project}`);
 });
+
 // Contact form
 app.post("/send", async (req, res) => {
   const { name, email, message } = req.body;
@@ -27,21 +28,10 @@ app.post("/send", async (req, res) => {
 
   try {
     const transporter = nodemailer.createTransport({
-      host: "smtp.gmail.com",
-      port: 465,
-      secure: true,
+      service: "gmail",
       auth: {
         user: process.env.MAIL_USER,
         pass: process.env.MAIL_PASS
-      }
-    });
-
-    // Optional: Debug SMTP
-    transporter.verify((err, success) => {
-      if (err) {
-        console.log("SMTP ERROR:", err);
-      } else {
-        console.log("SMTP READY");
       }
     });
 
@@ -61,3 +51,33 @@ app.post("/send", async (req, res) => {
     return res.json({ success: false, error: error.message });
   }
 });
+
+app.listen(port, () =>
+  console.log(`🚀 Server running at http://localhost:${port}`)
+);
+const contactForm = document.querySelector(".contact-form");
+const thankYou = document.querySelector(".thank-you-message");
+
+if (contactForm) {
+  contactForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(contactForm);
+    const data = Object.fromEntries(formData.entries());
+
+    const res = await fetch("/send", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data)
+    });
+
+    const result = await res.json();
+
+    if (result.success) {
+      contactForm.style.display = "none";
+      thankYou.style.display = "block";
+    } else {
+      alert("Error sending message. Try again.");
+    }
+  });
+}
