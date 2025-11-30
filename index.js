@@ -27,13 +27,17 @@ app.post("/send", async (req, res) => {
   console.log("📩 Received:", name, email, message);
 
   try {
-    const transporter = nodemailer.createTransport({
-      service: "gmail",
-      auth: {
-        user: process.env.MAIL_USER,
-        pass: process.env.MAIL_PASS
-      }
-    });
+   const transporter = nodemailer.createTransport({
+  host: "smtp.gmail.com",
+  port: 465,
+  secure: true,
+  auth: {
+    user: process.env.MAIL_USER,
+    pass: process.env.MAIL_PASS
+  }
+});
+
+    
 
     await transporter.sendMail({
       from: email,
@@ -55,29 +59,4 @@ app.post("/send", async (req, res) => {
 app.listen(port, () =>
   console.log(`🚀 Server running at http://localhost:${port}`)
 );
-const contactForm = document.querySelector(".contact-form");
-const thankYou = document.querySelector(".thank-you-message");
-
-if (contactForm) {
-  contactForm.addEventListener("submit", async (e) => {
-    e.preventDefault();
-
-    const formData = new FormData(contactForm);
-    const data = Object.fromEntries(formData.entries());
-
-    const res = await fetch("/send", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(data)
-    });
-
-    const result = await res.json();
-
-    if (result.success) {
-      contactForm.style.display = "none";
-      thankYou.style.display = "block";
-    } else {
-      alert("Error sending message. Try again.");
-    }
-  });
-}
+ 
