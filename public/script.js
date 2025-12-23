@@ -321,4 +321,4 @@ document.querySelector('.contact-form').addEventListener('submit', async (e) => 
         }
         
         console.log("[v0] GSAP animations and custom cursor initialized successfully");
- // Handle contact form without page reload
+ 
