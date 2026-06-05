@@ -7,6 +7,10 @@
         content="width=device-width, initial-scale=1.0, user-scalable=no,maximum-scale=1.0"
       />
       <title>The Dev Chronicle</title>
+      <script>
+        // Set theme immediately to avoid background color flash
+        document.documentElement.setAttribute('data-theme', localStorage.getItem('theme') || 'light');
+      </script>
       <link
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -14,6 +18,9 @@
       <link rel="stylesheet" href="/style.css" />
     </head>
     <body>
+      <!-- Scroll Progress Bar -->
+      <div class="scroll-progress"></div>
+
       <!-- Custom Cursor Elements -->
       <div class="cursor"></div>
       <div class="cursor-follower"></div>
@@ -117,6 +124,10 @@
               </a>
             </li>
           </ul>
+          <!-- Theme Switcher Widget -->
+          <div class="theme-switch-wrapper">
+            <button class="theme-switch-btn" aria-label="Toggle midnight edition">Midnight Edition</button>
+          </div>
         </nav>
 
         <section id="about">

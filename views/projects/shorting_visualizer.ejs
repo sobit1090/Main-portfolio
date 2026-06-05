@@ -3,14 +3,20 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>E-Commerce Platform - The Dev Chronicle</title>
+    <title>Sorting Visualizer - The Dev Chronicle</title>
+    <script>
+      // Load theme immediately
+      document.documentElement.setAttribute('data-theme', localStorage.getItem('theme') || 'light');
+    </script>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
     <link rel="stylesheet" href="/blogCss.css">
-   
   </head>
   <body>
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress"></div>
+
     <!-- Custom Cursor Elements -->
     <div class="cursor"></div>
     <div class="cursor-follower"></div>
@@ -33,7 +39,7 @@
       <div class="ink-blot ink-blot-1"></div>
       <div class="ink-blot ink-blot-2"></div>
       
- <a href="/" class="back-button" ">
+ <a href="/" class="back-button">
   Back
 </a>
 
@@ -41,7 +47,9 @@
 
 
       <header>
-    
+        <div class="theme-switch-wrapper">
+          <button class="theme-switch-btn" aria-label="Toggle midnight edition">Midnight Edition</button>
+        </div>
         <div class="header-content">
           <h1 class="logo">The Dev Chronicle</h1>
           <p class="tagline">Project Showcase & Technical Deep Dive</p>
@@ -286,73 +294,10 @@
       </footer>
     </div>
 
-    <script>
-      // Custom Cursor
-      const cursor = document.querySelector('.cursor');
-      const cursorFollower = document.querySelector('.cursor-follower');
-
-      document.addEventListener('mousemove', (e) => {
-        cursor.style.left = e.clientX + 'px';
-        cursor.style.top = e.clientY + 'px';
-        
-        setTimeout(() => {
-          cursorFollower.style.left = e.clientX + 'px';
-          cursorFollower.style.top = e.clientY + 'px';
-        }, 100);
-      });
-
-      // Floating code animation
-      document.querySelectorAll('.floating-code').forEach((code, i) => {
-        setInterval(() => {
-          code.style.transform = `translateY(${Math.sin(Date.now() * 0.001 + i) * 20}px)`;
-        }, 50);
-      });
-
-      // Smooth scroll for anchor links
-      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-          e.preventDefault();
-          const target = document.querySelector(this.getAttribute('href'));
-          if (target) {
-            target.scrollIntoView({
-              behavior: 'smooth',
-              block: 'start'
-            });
-          }
-        });
-      });
-
-      // Gallery item hover effects
-      document.querySelectorAll('.gallery-item').forEach(item => {
-        item.addEventListener('mouseenter', () => {
-          item.style.transform = 'scale(1.02)';
-        });
-        item.addEventListener('mouseleave', () => {
-          item.style.transform = 'scale(1)';
-        });
-      });
-
-      // Feature items animation on scroll
-      const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-      };
-
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
-          }
-        });
-      }, observerOptions);
-
-      document.querySelectorAll('.feature-item, .content-card, .timeline-item').forEach(item => {
-        item.style.opacity = '0';
-        item.style.transform = 'translateY(30px)';
-        item.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        observer.observe(item);
-      });
-    </script>
+    <!-- Load GSAP and common scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+    <script src="/script.js"></script>
   </body>
 </html>
