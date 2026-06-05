@@ -1,140 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sorting Visualizer - The Dev Chronicle</title>
-    <script>
-      // Load theme immediately
-      document.documentElement.setAttribute('data-theme', localStorage.getItem('theme') || 'light');
-    </script>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
-    <link rel="stylesheet" href="/blogCss.css">
-  </head>
-  <body>
-    <!-- Scroll Progress Bar -->
-    <div class="scroll-progress"></div>
 
-    <!-- Custom Cursor Elements -->
-    <div class="cursor"></div>
-    <div class="cursor-follower"></div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sorting Visualizer - The Dev Chronicle</title>
+  <script>
+    // Load theme immediately
+    document.documentElement.setAttribute('data-theme', localStorage.getItem('theme') || 'light');
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="/blogCss.css">
+</head>
 
-    <!-- Floating Code Elements -->
-    <div class="floating-code" style="top: 10%; left: 5%">
-      import React from 'react';
-    </div>
-    <div class="floating-code" style="top: 30%; right: 10%">
-      const [cart, setCart] = useState([]);
-    </div>
-    <div class="floating-code" style="bottom: 20%; left: 15%">
-      app.post('/api/orders', handler);
-    </div>
-    <div class="floating-code" style="bottom: 40%; right: 5%">
-      stripe.paymentIntents.create();
-    </div>
+<body>
+  <!-- Scroll Progress Bar -->
+  <div class="scroll-progress"></div>
 
-    <div class="newspaper-container">
-      <div class="ink-blot ink-blot-1"></div>
-      <div class="ink-blot ink-blot-2"></div>
-      
- <a href="/" class="back-button">
-  Back
-</a>
+  <!-- Custom Cursor Elements -->
+  <div class="cursor"></div>
+  <div class="cursor-follower"></div>
 
-
-
-
-      <header>
-        <div class="theme-switch-wrapper">
-          <button class="theme-switch-btn" aria-label="Toggle midnight edition">Midnight Edition</button>
-        </div>
-        <div class="header-content">
-          <h1 class="logo">The Dev Chronicle</h1>
-          <p class="tagline">Project Showcase & Technical Deep Dive</p>
-          <p class="date-line">Published: January 2025 | Status: Live Production</p>
-        </div>
-      </header>
-
-      <!-- Project Hero Section -->
-      <section class="project-hero">
-        <h1 class="project-title">Sorting Visualizer</h1>
-        <p class="project-subtitle">A Dynamic Interactive Sorting Visualizer</p>
-        
-        <div class="project-tech-hero">
-          <span class="tech-tag">HTML</span>
-          <span class="tech-tag">Css</span>
-          <span class="tech-tag">JavaScript</span>
-          <span class="tech-tag">Bootstrap</span>
-          <span class="tech-tag">Sorting Algorithms</span>
-          
-        </div>
-
-        <div class="project-links">
-          <a href="https://sobit1090.github.io/sorting_visualizer/" class="btn btn-primary">
-            <i class="fas fa-external-link-alt"></i>
-            Live Demo
-          </a>
-          <a href="https://github.com/sobit1090/sorting_visualizer" class="btn">
-            <i class="fab fa-github"></i>
-            Source Code
-          </a>
-          
-        </div>
-      </section>
-
-      <!-- Project Gallery -->
-     <section class="project-gallery">
-  <h2 class="section-title">Project Screenshots</h2>
-  <div class="gallery-grid">
-    <div class="gallery-item">
-      <div class="gallery-image">
-        <img src="/sorting_visualizer/s3.png" alt="">
-      </div>
-      <div class="gallery-caption">Enter Your Own Values</div>
-    </div>
-
-    <div class="gallery-item">
-      <div class="gallery-image">
-        <img src="/sorting_visualizer/s2.png" alt="">
-      </div>
-      <div class="gallery-caption">Various Sorting Algorithms</div>
-    </div>
-
-    <div class="gallery-item">
-      <div class="gallery-image">
-        <img src="/sorting_visualizer/s1.png" alt="">
-      </div>
-      <div class="gallery-caption">Random Value Feature</div>
-    </div>
+  <!-- Floating Code Elements -->
+  <div class="floating-code" style="top: 10%; left: 5%">
+    import React from 'react';
   </div>
-</section>
+  <div class="floating-code" style="top: 30%; right: 10%">
+    const [cart, setCart] = useState([]);
+  </div>
+  <div class="floating-code" style="bottom: 20%; left: 15%">
+    app.post('/api/orders', handler);
+  </div>
+  <div class="floating-code" style="bottom: 40%; right: 5%">
+    stripe.paymentIntents.create();
+  </div>
+
+  <div class="newspaper-container">
+    <div class="ink-blot ink-blot-1"></div>
+    <div class="ink-blot ink-blot-2"></div>
+
+    <a href="/" class="back-button">
+      Back
+    </a>
 
 
-      <!-- Project Overview -->
-      <section class="project-section">
-        <h2 class="section-title">Project Overview</h2>
-        <div class="content-grid">
-          <div class="content-card">
-            <h3 class="card-title">
-              <i class="fas fa-bullseye"></i>
-              Objectives
-            </h3>
-            <div class="card-content">
-              <ul>
-              <li>Develop an interactive visualizer for Bubble, Insertion, and Selection Sort</li>
-<li>Allow user-defined arrays (size, range) with randomize and reset options</li>
-<li>Provide step controls (play/pause/next), with adjustable animation speed</li>
-<li>Display live metrics: comparisons, swaps, passes, and elapsed time</li>
-<li>Explain algorithm logic with on-screen highlights and inline pseudo-code</li>
-<li>Ensure smooth, responsive UI that runs reliably on typical student hardware</li>
 
-              </ul>
-            </div>
+
+    <header>
+      <div class="theme-switch-wrapper">
+        <button class="theme-switch-btn" aria-label="Toggle midnight edition">Midnight Edition</button>
+      </div>
+      <div class="header-content">
+        <h1 class="logo">The Dev Chronicle</h1>
+        <p class="tagline">Project Showcase & Technical Deep Dive</p>
+        <p class="date-line">Published: January 2025 | Status: Live Production</p>
+      </div>
+    </header>
+
+    <!-- Project Hero Section -->
+    <section class="project-hero">
+      <h1 class="project-title">Sorting Visualizer</h1>
+      <p class="project-subtitle">A Dynamic Interactive Sorting Visualizer</p>
+
+      <div class="project-tech-hero">
+        <span class="tech-tag">HTML</span>
+        <span class="tech-tag">Css</span>
+        <span class="tech-tag">JavaScript</span>
+        <span class="tech-tag">Bootstrap</span>
+        <span class="tech-tag">Sorting Algorithms</span>
+
+      </div>
+
+      <div class="project-links">
+        <a href="https://sobit1090.github.io/sorting_visualizer/" class="btn btn-primary">
+          <i class="fas fa-external-link-alt"></i>
+          Live Demo
+        </a>
+        <a href="https://github.com/sobit1090/sorting_visualizer" class="btn">
+          <i class="fab fa-github"></i>
+          Source Code
+        </a>
+
+      </div>
+    </section>
+
+    <!-- Project Gallery -->
+    <section class="project-gallery">
+      <h2 class="section-title">Project Screenshots</h2>
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <div class="gallery-image">
+            <img src="/sorting_visualizer/s3.png" alt="">
           </div>
+          <div class="gallery-caption">Enter Your Own Values</div>
+        </div>
 
-          <!-- <div class="content-card">
+        <div class="gallery-item">
+          <div class="gallery-image">
+            <img src="/sorting_visualizer/s2.png" alt="">
+          </div>
+          <div class="gallery-caption">Various Sorting Algorithms</div>
+        </div>
+
+        <div class="gallery-item">
+          <div class="gallery-image">
+            <img src="/sorting_visualizer/s1.png" alt="">
+          </div>
+          <div class="gallery-caption">Random Value Feature</div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Project Overview -->
+    <section class="project-section">
+      <h2 class="section-title">Project Overview</h2>
+      <div class="content-grid">
+        <div class="content-card">
+          <h3 class="card-title">
+            <i class="fas fa-bullseye"></i>
+            Objectives
+          </h3>
+          <div class="card-content">
+            <ul>
+              <li>Develop an interactive visualizer for Bubble, Insertion, and Selection Sort</li>
+              <li>Allow user-defined arrays (size, range) with randomize and reset options</li>
+              <li>Provide step controls (play/pause/next), with adjustable animation speed</li>
+              <li>Display live metrics: comparisons, swaps, passes, and elapsed time</li>
+              <li>Explain algorithm logic with on-screen highlights and inline pseudo-code</li>
+              <li>Ensure smooth, responsive UI that runs reliably on typical student hardware</li>
+
+            </ul>
+          </div>
+        </div>
+
+        <!-- <div class="content-card">
             <h3 class="card-title">
               <i class="fas fa-crosshairs"></i>
               Project Scope
@@ -151,11 +151,11 @@
               </ul>
             </div>
           </div> -->
-        </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- Key Features -->
-      <!-- <section class="project-section">
+    <!-- Key Features -->
+    <!-- <section class="project-section">
         <h2 class="section-title">Key Features</h2>
         <div class="features-grid">
           <div class="feature-item">
@@ -203,49 +203,49 @@
         </div>
       </section> -->
 
-      <!-- Advantages & Benefits -->
- <section class="project-section">
-  <h2 class="section-title">Advantages & Benefits</h2>
-  <div class="content-grid">
-    
-    <div class="content-card">
-      <h3 class="card-title">
-        <i class="fas fa-rocket"></i>
-        Technical Advantages
-      </h3>
-      <div class="card-content">
-        <ul>
-          <li>Lightweight web application built using JavaScript</li>
-          <li>Optimized rendering for smooth animations</li>
-          <li>Responsive design compatible with desktop and mobile</li>
-          <li>Modular code for Scalability and easy addition of new Algorithms</li>
-          <li>Cross-browser support ensuring accessibility for all Users</li>
-          <li>Minimal hardware requirements, runs efficiently on student systems</li>
-        </ul>
+    <!-- Advantages & Benefits -->
+    <section class="project-section">
+      <h2 class="section-title">Advantages & Benefits</h2>
+      <div class="content-grid">
+
+        <div class="content-card">
+          <h3 class="card-title">
+            <i class="fas fa-rocket"></i>
+            Technical Advantages
+          </h3>
+          <div class="card-content">
+            <ul>
+              <li>Lightweight web application built using JavaScript</li>
+              <li>Optimized rendering for smooth animations</li>
+              <li>Responsive design compatible with desktop and mobile</li>
+              <li>Modular code for Scalability and easy addition of new Algorithms</li>
+              <li>Cross-browser support ensuring accessibility for all Users</li>
+              <li>Minimal hardware requirements, runs efficiently on student systems</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="content-card">
+          <h3 class="card-title">
+            <i class="fas fa-heart"></i>
+            Educational Benefits
+          </h3>
+          <div class="card-content">
+            <ul>
+              <li>Helps students visualize Bubble, Insertion, and Selection Sort step-by-step</li>
+              <li>Interactive controls (play/pause, reset) enhance learning</li>
+              <li>Improves conceptual clarity with highlighted comparisons and swaps</li>
+              <li>Encourages active learning through real-time experimentation</li>
+              <li>Bridges the gap between Algorithm theory and practical implementation</li>
+              <li>Serves as a reusable tool for teaching and self-study</li>
+            </ul>
+          </div>
+        </div>
+
       </div>
-    </div>
+    </section>
 
-    <div class="content-card">
-      <h3 class="card-title">
-        <i class="fas fa-heart"></i>
-        Educational Benefits
-      </h3>
-      <div class="card-content">
-        <ul>
-          <li>Helps students visualize Bubble, Insertion, and Selection Sort step-by-step</li>
-          <li>Interactive controls (play/pause, reset) enhance learning</li>
-          <li>Improves conceptual clarity with highlighted comparisons and swaps</li>
-          <li>Encourages active learning through real-time experimentation</li>
-          <li>Bridges the gap between Algorithm theory and practical implementation</li>
-          <li>Serves as a reusable tool for teaching and self-study</li>
-        </ul>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-      <!-- Deliverables
+    <!-- Deliverables
       <section class="project-section">
         <h2 class="section-title">Project Deliverables</h2>
         <div class="timeline">
@@ -286,18 +286,19 @@
           </div>
         </div>
       </section> -->
-<!-- <button>
+    <!-- <button>
   <a href="/project.pdf"download="resume.pdf">resume</a>
 </button> -->
-      <footer>
-        <p>&copy; 2025 The Dev Chronicle. All rights reserved.</p>
-      </footer>
-    </div>
+    <footer>
+      <p>&copy; 2025 The Dev Chronicle. All rights reserved.</p>
+    </footer>
+  </div>
 
-    <!-- Load GSAP and common scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
-    <script src="/script.js"></script>
-  </body>
+  <!-- Load GSAP and common scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+  <script src="/script.js"></script>
+</body>
+
 </html>
