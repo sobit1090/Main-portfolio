@@ -1,0 +1,52 @@
+[
+  {
+    "id": "1",
+    "title": "Los Pollos Hermanos",
+    "description": "A web app to create, edit, and manage movie characters with MongoDB storage, EJS templates, and RESTful APIs for dynamic functionality.",
+    "image": "/LosPollos/menu.png",
+    "githubLink": "https://github.com/sobit1090/Main-portfolio",
+    "deployLink": "/projects/LosPollos",
+    "slug": "LosPollos",
+    "isLocal": true
+  },
+  {
+    "id": "2",
+    "title": "To-Do List",
+    "description": "A To-Do List stores tasks in browser localStorage, enabling offline use with persistent add, edit, and delete functionality.",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJjpHpnrh8l3uc5hxHZLv8AKCrAuEnXJECUg&s",
+    "githubLink": "https://github.com/sobit1090/Main-portfolio",
+    "deployLink": "/projects/To-Do-List",
+    "slug": "to-do-list",
+    "isLocal": true
+  },
+  {
+    "id": "3",
+    "title": "Movie Character Manager",
+    "description": "A web app to create, edit, and manage movie characters with MongoDB storage, EJS templates, and RESTful APIs for dynamic functionality.",
+    "image": "/movie-character/s2.png",
+    "githubLink": "https://github.com/sobit1090/Main-portfolio",
+    "deployLink": "/projects/movie",
+    "slug": "movie",
+    "isLocal": true
+  },
+  {
+    "id": "4",
+    "title": "The Sorting Visualizer",
+    "description": "An interactive sorting visualizer that demonstrates algorithms step by step, making learning sorting techniques engaging, clear, and intuitive.",
+    "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAATYAAACiCAMAAAD84hF6AAAAjVBMVEX///8eHjhoaHQSEjHgVExiYm7fT0fng38AACpeXmtlZXGMjJTmf3oAABgAABoAAByYmJ8PDzDV1dcAACJTU2EWFjNCQlPCwsYAACUtLUMaGjW4uL2urrOjo6nsoJ3y8vPql5Pp6et0dH/Ly87fSkHe3uCDg4wlJT0AACBYWGYAAAcAAA7wt7TvsK1xcXzN7j2ZAAACx0lEQVR4nO3d23LaMBRAUQqFWOYObWkLhRZyseOE//+8TmZ6EGNqIx3sMbb3ftMEfKT1kAclJJ0OERERUZkNTV8yw6o3U5/CoCcFYdWbqU/d3iep1616M/UJNlWwqYJNFWwZPS1sTxdfhS0jM15KY3PxVdgyyoeBLSPYVMGmCjZVsKmCTVUK5vmL7Rm2zFIwYfBV+rgpgi2jFEz+kiTYVMGmCjZVLWZbHGwLz/e2mM1MvkuTy8uf/FrMdsvhYIPNL9hUwaYKNlWwqfI63P6bbQ+b6+HC+U9pfnk1BJvbi2GDzS/YVMGmCjZVqcMtVrbLeyTYpNThzPR0jzS9+ktEsLmdFTYJNlWwqYJNFWyqYHPr+PJDejnC5lr37PLH96xtZrvhrLDB5hdsqmBTBZsqr7Me1rYDbK5nNdHpHikysCmPDhtsfsGmCjZVsKmCza0wmEv/+SgUbBl53RTBJlXlBBtssDkGm6pGs602tlWhT240m4kCKfL9yFh+jWYrbwhsRTwZNtWTYVM9GTbVk2FTPbnmbPHrWHqNYSvmNAUGWwmDYFMNgk01CDbVINhUg+6ebf3LtobNtf7ydDW07MNWyvYLDLby58Kmmgubai5sqrmwqeZWwRYnp7ugJIbN9UT5L4QNNthggw022LzYNjPbBjbXDXrdFMFW7hDYYIMNNthgg61gtjiZSLdeWLWJLf+9sMEGG2ywwQabF9vb1vYGm+vc0aNtBJvr3IfBZ2nwABtssMEGW8PYdufB5jrEJFMpufpPM2DLeDJssMEGG2ywNYPt/bftHTbXE40eB1LBVzSNZitvg7DBBhtssMH2b7n7Y9vB5rqMk0hKrv4FJNi8twAbbLDBBhtssHkvZ8e9dJzB5rrM/z8lsKmW97kr2GCDrT5sqZ8lhEFP+vhOXdXyPnd11nZk23Y6Q9OXzLC65X3uioiIiG7tLzdir2E9Mug5AAAAAElFTkSuQmCC",
+    "githubLink": "https://github.com/sobit1090/Main-portfolio",
+    "deployLink": "/projects/shorting_visualizer",
+    "slug": "shorting-visualizer",
+    "isLocal": true
+  },
+  {
+    "id": "5",
+    "title": "password generator",
+    "description": "An interactive Password generating website that demonstrates States in the Reacts Hooks , making learning the react hooks more engaging, clear, and intuitive.",
+    "image": "/password_generator/s2.png",
+    "githubLink": "https://github.com/sobit1090/Main-portfolio",
+    "deployLink": "/projects/password_generator",
+    "slug": "password-generator",
+    "isLocal": true
+  }
+]

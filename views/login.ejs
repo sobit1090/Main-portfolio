@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no,maximum-scale=1.0" />
+    <title>The Dev Chronicle - Admin Access</title>
+    <script>
+      // Set theme immediately to avoid background color flash
+      document.documentElement.setAttribute('data-theme', localStorage.getItem('theme') || 'light');
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="/style.css" />
+    <style>
+      * {
+        cursor: auto !important;
+      }
+      .login-container {
+        max-width: 450px;
+        margin: 100px auto;
+        padding: 40px;
+        background-color: var(--card-bg);
+        border: 1px solid var(--border-color);
+        box-shadow: 6px 6px 0 var(--border-color);
+        text-align: center;
+        position: relative;
+      }
+      .login-header {
+        border-bottom: 3px double var(--border-color);
+        padding-bottom: 20px;
+        margin-bottom: 30px;
+      }
+      .login-title {
+        font-family: 'Playfair Display', Georgia, serif;
+        font-size: 2.2rem;
+        text-transform: uppercase;
+        font-weight: 900;
+        letter-spacing: 1px;
+      }
+      .login-subtitle {
+        font-family: 'Lora', Georgia, serif;
+        font-size: 0.95rem;
+        font-style: italic;
+        margin-top: 5px;
+        opacity: 0.85;
+      }
+      .login-form input[type="password"] {
+        width: 100%;
+        padding: 12px;
+        margin-bottom: 20px;
+        background: transparent;
+        border: 1px solid var(--border-color);
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 1.05rem;
+        text-align: center;
+        color: var(--text-color);
+      }
+      .login-form input[type="password"]:focus {
+        outline: none;
+        border-color: var(--accent-color);
+      }
+      .login-btn {
+        width: 100%;
+        padding: 12px;
+        background: var(--border-color);
+        color: var(--bg-color);
+        border: 1px solid var(--border-color);
+        font-family: 'JetBrains Mono', monospace;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+      .login-btn:hover {
+        background: var(--accent-color);
+        border-color: var(--accent-color);
+        color: #ffffff;
+        transform: translateY(-2px);
+        box-shadow: 4px 4px 0 var(--border-color);
+      }
+      .login-error {
+        color: #d9534f;
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 0.85rem;
+        margin-top: 15px;
+        border: 1px dashed #d9534f;
+        padding: 8px;
+        background: rgba(217, 83, 79, 0.05);
+      }
+      .back-link {
+        display: inline-block;
+        margin-top: 25px;
+        color: var(--text-color);
+        text-decoration: none;
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        border-bottom: 1px dashed var(--border-color);
+        padding-bottom: 2px;
+        transition: color 0.3s, border-color 0.3s;
+      }
+      .back-link:hover {
+        color: var(--accent-color);
+        border-color: var(--accent-color);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress"></div>
+
+    <div class="newspaper-container">
+      <div class="login-container">
+        <div class="login-header">
+          <div class="login-title">Security Desk</div>
+          <div class="login-subtitle">Enter Credentials to Publish Dispatch</div>
+        </div>
+        <form class="login-form" method="POST" action="/admin/login">
+          <input type="password" name="password" placeholder="Enter Admin Password" required autofocus />
+          <button type="submit" class="login-btn">Verify Signature</button>
+        </form>
+        <% if (error) { %>
+          <div class="login-error">⚠️ <%= error %></div>
+        <% } %>
+        <a href="/" class="back-link"><i class="fa-solid fa-arrow-left"></i> Return to Chronicle</a>
+      </div>
+    </div>
+  </body>
+</html>
