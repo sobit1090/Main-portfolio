@@ -48,5 +48,25 @@
     "deployLink": "/projects/password_generator",
     "slug": "password-generator",
     "isLocal": true
+  },
+  {
+    "id": "1781861934749",
+    "title": "Test Project",
+    "description": "A simple backend service built with Node.js, Express, and MongoDB to manage resTest descriptionources.",
+    "image": "https://github.com/sobit10/test-image.png90/backend-with-mongodb",
+    "githubLink": "https://github.com/sobit1090/backend-with-mongodb",
+    "deployLink": "https://github.com/sobit1090/backend-with-mongodb",
+    "slug": "test-slug",
+    "isLocal": false
+  },
+  {
+    "id": "1781862249578",
+    "title": "Backend With Mongodb",
+    "description": "A backend service built with Node.js, Express, and MongoDB to manage resources.",
+    "image": "/images/placeholder.png/test-image2.png",
+    "githubLink": "https://github.com/sobit1090/backend-with-mongodb",
+    "deployLink": "https://github.com/sobit1090/backend-with-mongodb",
+    "slug": "backend-with-mongodb",
+    "isLocal": false
   }
 ]

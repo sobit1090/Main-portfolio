@@ -222,6 +222,136 @@
         color: white;
         border-color: #d9534f;
       }
+
+      /* Smart Importer Styles */
+      .smart-importer-container {
+        border: 2px dashed var(--border-color);
+        padding: 20px;
+        margin-bottom: 30px;
+        background: rgba(1, 8, 205, 0.02);
+        position: relative;
+        transition: border-color 0.3s, background 0.3s;
+      }
+      [data-theme="dark"] .smart-importer-container {
+        background: rgba(229, 158, 48, 0.02);
+      }
+      .smart-importer-container:hover {
+        border-color: var(--accent-color);
+      }
+      .importer-textarea {
+        width: 100%;
+        min-height: 90px;
+        padding: 12px;
+        background: transparent;
+        border: 1px solid var(--border-color);
+        color: var(--text-color);
+        font-family: 'Lora', Georgia, serif;
+        font-size: 0.95rem;
+        resize: vertical;
+        margin-top: 8px;
+        margin-bottom: 12px;
+        transition: border-color 0.3s;
+      }
+      .importer-textarea:focus {
+        outline: none;
+        border-color: var(--accent-color);
+      }
+      .importer-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        align-items: center;
+      }
+      .btn-import {
+        background: var(--border-color);
+        color: var(--bg-color);
+        border: 1px solid var(--border-color);
+        padding: 8px 16px;
+        font-family: 'JetBrains Mono', monospace;
+        font-weight: bold;
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        transition: all 0.2s ease;
+      }
+      .btn-import:hover {
+        background: var(--accent-color);
+        color: #ffffff;
+        border-color: var(--accent-color);
+        transform: translateY(-1px);
+      }
+      .btn-secondary-import {
+        background: transparent;
+        color: var(--text-color);
+        border: 1px solid var(--border-color);
+        padding: 8px 16px;
+        font-family: 'JetBrains Mono', monospace;
+        font-weight: bold;
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        transition: all 0.2s ease;
+      }
+      .btn-secondary-import:hover {
+        background: var(--border-color);
+        color: var(--bg-color);
+        transform: translateY(-1px);
+      }
+      .importer-status {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 0.8rem;
+        margin-top: 15px;
+        display: none;
+        align-items: center;
+        gap: 8px;
+        padding: 10px;
+        border: 1px dashed var(--border-color);
+      }
+      .importer-status.active {
+        display: flex;
+      }
+      .spinner {
+        animation: spin 1.2s linear infinite;
+      }
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+      .gemini-config-panel {
+        display: none;
+        border: 1px solid var(--border-color);
+        padding: 15px;
+        margin-top: 15px;
+        background: rgba(0, 0, 0, 0.02);
+      }
+      [data-theme="dark"] .gemini-config-panel {
+        background: rgba(255, 255, 255, 0.02);
+      }
+      .gemini-config-panel.active {
+        display: block;
+      }
+      .gemini-config-panel input {
+        width: 100%;
+        padding: 10px;
+        margin-top: 5px;
+        margin-bottom: 12px;
+        background: transparent;
+        border: 1px solid var(--border-color);
+        color: var(--text-color);
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 0.85rem;
+      }
+      .gemini-config-panel input:focus {
+        outline: none;
+        border-color: var(--accent-color);
+      }
     </style>
   </head>
   <body>
@@ -253,6 +383,43 @@
           <% if (error) { %>
             <div class="admin-error">⚠️ <%= error %></div>
           <% } %>
+
+          <!-- Smart Project Importer Container -->
+          <div class="smart-importer-container">
+            <label class="importer-label" style="font-family: 'JetBrains Mono', monospace; font-weight: bold; font-size: 0.85rem; text-transform: uppercase; display: block; margin-bottom: 5px;">
+              <i class="fa-solid fa-wand-magic-sparkles"></i> Smart Project Importer
+            </label>
+            <span style="font-family: 'Lora', Georgia, serif; font-size: 0.85rem; font-style: italic; opacity: 0.75; display: block; margin-bottom: 8px;">
+              Paste a GitHub Repo URL, markdown README, or project description below to auto-fill the form fields.
+            </span>
+            <textarea id="importer-input" class="importer-textarea" placeholder="e.g. https://github.com/sobit1090/backend-with-mongodb OR paste a project description..."></textarea>
+            
+            <div class="importer-actions">
+              <button type="button" id="btn-autofill" class="btn-import">
+                <i class="fa-solid fa-wand-magic-sparkles"></i> Auto-Fill Fields
+              </button>
+              <button type="button" id="btn-toggle-gemini" class="btn-secondary-import">
+                <i class="fa-solid fa-key"></i> Configure Gemini AI
+              </button>
+            </div>
+            
+            <div id="gemini-config" class="gemini-config-panel">
+              <label style="font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; font-weight: bold; text-transform: uppercase; display: block;">Gemini API Key (Optional)</label>
+              <span style="font-family: 'Lora', Georgia, serif; font-size: 0.8rem; font-style: italic; opacity: 0.75; display: block; margin-bottom: 8px;">
+                Enter a Gemini API Key to enable highly accurate AI-powered parsing. Key is saved locally in your browser.
+              </span>
+              <input type="password" id="gemini-api-key" placeholder="Enter AIzaSy..." />
+              <div style="display: flex; gap: 10px;">
+                <button type="button" id="btn-save-key" class="btn-import" style="padding: 6px 12px; font-size: 0.75rem;">Save Key</button>
+                <button type="button" id="btn-clear-key" class="btn-secondary-import" style="padding: 6px 12px; font-size: 0.75rem; border-color: #d9534f; color: #d9534f;">Clear Key</button>
+              </div>
+            </div>
+
+            <div id="importer-status-message" class="importer-status">
+              <i class="fa-solid fa-circle-notch spinner" id="status-icon"></i>
+              <span id="status-text">Processing...</span>
+            </div>
+          </div>
 
           <form method="POST" action="<%= editProject ? '/admin/projects/edit/' + editProject.id : '/admin/projects/add' %>">
             <div class="form-field">
@@ -335,5 +502,339 @@
         </section>
       </div>
     </div>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const importerInput = document.getElementById('importer-input');
+        const btnAutofill = document.getElementById('btn-autofill');
+        const btnToggleGemini = document.getElementById('btn-toggle-gemini');
+        const geminiConfig = document.getElementById('gemini-config');
+        const geminiApiKeyInput = document.getElementById('gemini-api-key');
+        const btnSaveKey = document.getElementById('btn-save-key');
+        const btnClearKey = document.getElementById('btn-clear-key');
+        const statusMessage = document.getElementById('importer-status-message');
+        const statusIcon = document.getElementById('status-icon');
+        const statusText = document.getElementById('status-text');
+
+        // Form Fields
+        const inputTitle = document.getElementById('title');
+        const inputDescription = document.getElementById('description');
+        const inputImage = document.getElementById('image');
+        const inputGithub = document.getElementById('githubLink');
+        const inputDeploy = document.getElementById('deployLink');
+        const inputSlug = document.getElementById('slug');
+        const checkboxIsLocal = document.getElementById('isLocal');
+
+        // Load Gemini API Key if present
+        let savedKey = localStorage.getItem('gemini_api_key');
+        if (savedKey) {
+          geminiApiKeyInput.value = savedKey;
+          btnToggleGemini.innerHTML = '<i class="fa-solid fa-key"></i> Gemini AI Configured';
+          btnToggleGemini.style.borderColor = 'var(--accent-color)';
+        }
+
+        // Toggle Gemini Config Panel
+        btnToggleGemini.addEventListener('click', () => {
+          geminiConfig.classList.toggle('active');
+        });
+
+        // Save Gemini Key
+        btnSaveKey.addEventListener('click', () => {
+          const key = geminiApiKeyInput.value.trim();
+          if (key) {
+            localStorage.setItem('gemini_api_key', key);
+            savedKey = key;
+            alert('Gemini API Key saved locally!');
+            btnToggleGemini.innerHTML = '<i class="fa-solid fa-key"></i> Gemini AI Configured';
+            btnToggleGemini.style.borderColor = 'var(--accent-color)';
+            geminiConfig.classList.remove('active');
+          } else {
+            alert('Please enter a valid API key.');
+          }
+        });
+
+        // Clear Gemini Key
+        btnClearKey.addEventListener('click', () => {
+          localStorage.removeItem('gemini_api_key');
+          savedKey = null;
+          geminiApiKeyInput.value = '';
+          btnToggleGemini.innerHTML = '<i class="fa-solid fa-key"></i> Configure Gemini AI';
+          btnToggleGemini.style.borderColor = 'var(--border-color)';
+          alert('Gemini API Key removed.');
+          geminiConfig.classList.remove('active');
+        });
+
+        // Main Autofill Action
+        btnAutofill.addEventListener('click', async () => {
+          const text = importerInput.value.trim();
+          if (!text) {
+            showStatus('Please paste some project info or GitHub link first.', 'error');
+            return;
+          }
+
+          showStatus('Scanning text...', 'loading');
+
+          // Check if it's a GitHub URL
+          const githubRegex = /github\.com\/([^\/]+)\/([^\/\?\s#]+)/i;
+          const match = text.match(githubRegex);
+
+          if (match) {
+            const owner = match[1];
+            const repo = match[2].replace(/\.git$/, '');
+            showStatus(`Fetching GitHub repo info for ${owner}/${repo}...`, 'loading');
+
+            try {
+              // 1. Fetch Repository Details from GitHub API
+              const repoRes = await fetch(`https://api.github.com/repos/${owner}/${repo}`);
+              if (!repoRes.ok) {
+                throw new Error('Failed to fetch repository metadata. Is it a public repo?');
+              }
+              const repoData = await repoRes.json();
+
+              // Auto-fill metadata
+              inputTitle.value = formatTitle(repoData.name);
+              inputDescription.value = repoData.description || '';
+              inputGithub.value = repoData.html_url || '';
+              inputDeploy.value = repoData.homepage || '';
+              inputSlug.value = repoData.name.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+              checkboxIsLocal.checked = false;
+
+              // 2. Fetch README to look for an image
+              showStatus('Searching README for screenshots...', 'loading');
+              try {
+                const readmeRes = await fetch(`https://api.github.com/repos/${owner}/${repo}/readme`, {
+                  headers: { 'Accept': 'application/vnd.github.raw' }
+                });
+                if (readmeRes.ok) {
+                  const readmeText = await readmeRes.text();
+                  const imageUrl = extractFirstImage(readmeText, owner, repo, repoData.default_branch || 'main');
+                  if (imageUrl) {
+                    inputImage.value = imageUrl;
+                    showStatus('GitHub details & screenshot imported successfully!', 'success');
+                  } else {
+                    inputImage.value = '/images/placeholder.png'; // Fallback / default
+                    showStatus('GitHub details imported successfully (no screenshot found).', 'success');
+                  }
+                } else {
+                  inputImage.value = '/images/placeholder.png';
+                  showStatus('GitHub details imported. README could not be fetched.', 'success');
+                }
+              } catch (readmeErr) {
+                console.warn('Could not parse readme:', readmeErr);
+                inputImage.value = '/images/placeholder.png';
+                showStatus('GitHub details imported successfully.', 'success');
+              }
+
+              // Trigger styling focus classes if needed
+              highlightInputs();
+
+            } catch (err) {
+              console.error(err);
+              showStatus(`GitHub Import Error: ${err.message}`, 'error');
+            }
+          } else {
+            // Not a GitHub link, check if Gemini API key is available
+            if (savedKey) {
+              showStatus('Using Gemini AI to parse project details...', 'loading');
+              try {
+                const result = await parseWithGemini(text, savedKey);
+                if (result) {
+                  inputTitle.value = result.title || '';
+                  inputDescription.value = result.description || '';
+                  inputImage.value = result.image || '/images/placeholder.png';
+                  inputGithub.value = result.githubLink || '';
+                  inputDeploy.value = result.deployLink || '';
+                  inputSlug.value = result.slug || '';
+                  checkboxIsLocal.checked = !!result.isLocal;
+
+                  highlightInputs();
+                  showStatus('AI Parser completed successfully!', 'success');
+                } else {
+                  throw new Error('Invalid JSON returned from AI parser.');
+                }
+              } catch (err) {
+                console.error(err);
+                showStatus(`Gemini AI parsing failed. Falling back to local parser. Error: ${err.message}`, 'loading');
+                setTimeout(() => {
+                  parseWithHeuristics(text);
+                }, 1500);
+              }
+            } else {
+              // Fallback to Heuristics parser
+              showStatus('Parsing details with local heuristics...', 'loading');
+              setTimeout(() => {
+                parseWithHeuristics(text);
+              }, 600);
+            }
+          }
+        });
+
+        // Helper functions
+        function showStatus(message, type) {
+          statusMessage.classList.add('active');
+          statusText.innerText = message;
+
+          if (type === 'loading') {
+            statusIcon.className = 'fa-solid fa-circle-notch spinner';
+            statusMessage.style.borderColor = 'var(--border-color)';
+            statusMessage.style.color = 'var(--text-color)';
+          } else if (type === 'success') {
+            statusIcon.className = 'fa-solid fa-circle-check';
+            statusMessage.style.borderColor = 'var(--accent-color)';
+            statusMessage.style.color = 'var(--accent-color)';
+          } else if (type === 'error') {
+            statusIcon.className = 'fa-solid fa-circle-exclamation';
+            statusMessage.style.borderColor = '#d9534f';
+            statusMessage.style.color = '#d9534f';
+          }
+        }
+
+        function formatTitle(name) {
+          return name
+            .replace(/[-_]/g, ' ')
+            .replace(/\b\w/g, c => c.toUpperCase());
+        }
+
+        function extractFirstImage(markdown, owner, repo, defaultBranch) {
+          // Look for standard markdown images: ![alt](url)
+          const imgRegex = /!\[.*?\]\((.*?)\)/;
+          const match = markdown.match(imgRegex);
+          if (match) {
+            let url = match[1].trim();
+            // Resolve relative path
+            if (!url.startsWith('http') && !url.startsWith('//')) {
+              // Strip leading slash if any
+              if (url.startsWith('/')) url = url.substring(1);
+              return `https://raw.githubusercontent.com/${owner}/${repo}/${defaultBranch}/${url}`;
+            }
+            // Convert github.com blob URLs to raw
+            if (url.includes('github.com') && url.includes('/blob/')) {
+              return url.replace('github.com', 'raw.githubusercontent.com').replace('/blob/', '/');
+            }
+            return url;
+          }
+          return null;
+        }
+
+        function parseWithHeuristics(text) {
+          try {
+            const lines = text.split('\n').map(l => l.trim()).filter(Boolean);
+            if (lines.length === 0) return;
+
+            // Extract Title: check first line or Markdown heading
+            let title = '';
+            const headingMatch = lines[0].match(/^#+\s*(.+)$/);
+            if (headingMatch) {
+              title = headingMatch[1];
+            } else {
+              title = lines[0].replace(/^title:\s*/i, '');
+            }
+            if (title.length > 50) title = title.substring(0, 47) + '...';
+            inputTitle.value = title;
+
+            // Extract URLs
+            const urlRegex = /(https?:\/\/[^\s]+)/g;
+            const urls = text.match(urlRegex) || [];
+            let github = '';
+            let deploy = '';
+            let image = '/images/placeholder.png';
+
+            urls.forEach(url => {
+              // Strip trailing punctuation from URL if any
+              const cleanUrl = url.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]$/, '');
+              if (cleanUrl.includes('github.com')) {
+                github = cleanUrl;
+              } else if (cleanUrl.match(/\.(png|jpg|jpeg|gif|webp|svg)/i)) {
+                image = cleanUrl;
+              } else {
+                deploy = cleanUrl;
+              }
+            });
+
+            inputGithub.value = github;
+            inputDeploy.value = deploy;
+            inputImage.value = image;
+
+            // Extract Description (all lines excluding the title/headings and URL lines)
+            const descLines = lines.slice(1).filter(l => {
+              return !l.startsWith('#') && !l.match(/https?:\/\//) && !l.toLowerCase().startsWith('title:');
+            });
+            inputDescription.value = descLines.join(' ').substring(0, 300);
+
+            // Slug
+            inputSlug.value = title.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+            checkboxIsLocal.checked = false;
+
+            highlightInputs();
+            showStatus('Auto-filled fields using local heuristics parser.', 'success');
+          } catch (err) {
+            console.error(err);
+            showStatus('Failed to parse with local heuristics.', 'error');
+          }
+        }
+
+        async function parseWithGemini(text, apiKey) {
+          const prompt = `Parse the following raw text or markdown about a portfolio project.
+Extract details and structure them into the requested schema. Make the description punchy and professional for a developer portfolio.
+Project Text:
+${text}`;
+
+          const requestBody = {
+            contents: [{
+              parts: [{ text: prompt }]
+            }],
+            generationConfig: {
+              responseMimeType: "application/json",
+              responseSchema: {
+                type: "OBJECT",
+                properties: {
+                  title: { type: "STRING" },
+                  description: { type: "STRING" },
+                  image: { type: "STRING" },
+                  githubLink: { type: "STRING" },
+                  deployLink: { type: "STRING" },
+                  slug: { type: "STRING" },
+                  isLocal: { type: "BOOLEAN" }
+                },
+                required: ["title", "description", "image", "githubLink", "deployLink", "slug", "isLocal"]
+              }
+            }
+          };
+
+          const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(requestBody)
+          });
+
+          if (!response.ok) {
+            const errData = await response.json();
+            throw new Error(errData.error?.message || 'API request failed');
+          }
+
+          const resData = await response.json();
+          const jsonText = resData.candidates?.[0]?.content?.parts?.[0]?.text;
+          if (!jsonText) {
+            throw new Error('Empty response from model.');
+          }
+
+          return JSON.parse(jsonText);
+        }
+
+        function highlightInputs() {
+          const fields = [inputTitle, inputDescription, inputImage, inputGithub, inputDeploy, inputSlug];
+          fields.forEach(el => {
+            if (el.value) {
+              el.style.borderColor = 'var(--accent-color)';
+              setTimeout(() => {
+                el.style.borderColor = 'var(--border-color)';
+              }, 1500);
+            }
+          });
+        }
+      });
+    </script>
   </body>
 </html>
